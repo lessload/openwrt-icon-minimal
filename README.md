@@ -10,5 +10,7 @@ under licence https://pictogrammers.com/docs/general/license/ (Apache 2.0)
 
 <img src="sample.png" height="280">
 
+* sample picture use `Noto Sans` font. not default font from OpenWRT.
+
 ### Discustion Forum
 https://forum.openwrt.org/t/minimal-icon-set-png-svg-for-openwrt-i-wish-dev-should-improve-it/217813

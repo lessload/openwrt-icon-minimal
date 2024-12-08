@@ -14,3 +14,7 @@ under licence https://pictogrammers.com/docs/general/license/ (Apache 2.0)
 
 ### Discussion Forum
 https://forum.openwrt.org/t/minimal-icon-set-png-svg-for-openwrt-please-improve-it-dev
+
+----------------------
+### favicon-mod
+* For better look for favicon. optimize color for dark theme.

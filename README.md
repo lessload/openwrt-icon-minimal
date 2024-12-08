@@ -17,4 +17,4 @@ https://forum.openwrt.org/t/minimal-icon-set-png-svg-for-openwrt-please-improve-
 
 ----------------------
 ### favicon-mod
-* For better look for favicon. optimize color for dark theme.
+* For better favicon. optimize color for dark theme.

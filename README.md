@@ -8,17 +8,20 @@ under licence https://pictogrammers.com/docs/general/license/ (Apache 2.0)
 
 ### Sample Picture
 
-<img src="sample.png" height="280">
+<img src="sample.png" width="600">
 
 * tested on Bootstrap default in OpenWRT 24.x .
 * sample picture use `Noto Sans` font. not default font from OpenWRT.
 
-### Discussion Forum
-https://forum.openwrt.org/t/minimal-icon-set-png-svg-for-openwrt-please-improve-it-dev
-
 ----------------------
 ### favicon-mod
-* For better favicon. optimize color for dark theme.
+* For better favicon. optimize color for web browser dark theme.
 
 ### css-mod
-* for better layout with `noto sans` font
+* for better layout and compatible with `noto sans` font
+* optimize for touch device
+<img src="sample-mobile.png" width="800">
+
+----------------------
+### Discussion Here
+https://forum.openwrt.org/t/minimal-icon-set-png-svg-for-openwrt-please-improve-it-dev

@@ -199,7 +199,7 @@ textarea {
 body {
   background-color: var(--background-color-high);
   font-family: "Noto Sans", sans-serif;
-  font-size: 0.86em; /*menu + some text*/
+  font-size: 14px; /*menu + some text*/
   font-weight: 400;
   line-height: 1.4em; /*menu*/
   color: var(--text-color-high);
@@ -281,6 +281,7 @@ h6 {
 }
 h4 {
   font-size: 16px;
+  margin-bottom: 1em;
 }
 h4 small {
   font-size: 12px;
@@ -420,6 +421,7 @@ select {
   flex: 0 0 180px;
   text-align: right;
   color: var(--text-color-high);
+  max-width: 12em; /* login + firmware table */
 }
 label > input[type="checkbox"],
 label > input[type="radio"] {
@@ -453,7 +455,7 @@ select,
   min-width: 210px;
   max-width: 400px;
   width: auto;
-  min-height: 3em;
+  min-height: 2.6em; /* drop down option menu */
 }
 .cbi-dynlist {
   height: auto;
@@ -760,7 +762,7 @@ textarea[readonly] {
 }
 .table .td,
 .table .th {
-  border-top: 1px solid #313131; /* table line too light */
+  border-top: 1px solid rgba(125, 125, 125, 0.15); /* table line too light */
 }
 .tr.placeholder {
   height: calc(3em + 20px);
@@ -783,7 +785,7 @@ textarea[readonly] {
 }
 header {
   /* width: 94%; /* nav bar: effect gradiant */
-  position: sticky; /**/
+  position: sticky;
   top: 0;
   z-index: 800;
   overflow: visible;
@@ -911,7 +913,7 @@ a.menu:after {
   display: block;
   clear: both;
   font-weight: 400;
-  line-height: 18px;
+  line-height: 16px; /* nav drop down */
   color: gray;
   text-shadow: 0 1px 0 #fff;
   padding: 4px 15px;
@@ -1095,7 +1097,7 @@ footer ul.breadcrumb {
   position: fixed;
   top: 0;
   bottom: 0;
-  background: rgba(18, 18, 18, 0.7); /* bg login color */
+  background: rgba(18, 18, 18, 0.7); /* bg login color : fix oled high contrast*/
   z-index: 900;
   overflow: auto;
   transition: opacity 0.125s ease-in;
@@ -1103,20 +1105,20 @@ footer ul.breadcrumb {
   visibility: hidden;
 }
 .modal {
-  width: 90%;
+  /* width: 90%; */
   min-height: 32px;
-  max-width: 600px;
+  max-width: 46em; /* login + popup firmware */
   border-radius: 3px;
   background: var(--background-color-high);
   border: 1px solid var(--border-color-low);
   box-shadow: 0 0 3px var(--background-color-low);
   min-width: 270px;
   margin: 5em auto;
-  padding: 1em 1em 0.5em;
+  padding: 1em 1em 1.2em; /* login, firmware popup */
 }
 .modal > * {
   line-height: normal;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.5em; /* under Auth login : effect flash fw option*/
   max-width: 100%;
 }
 .modal > pre,
@@ -1274,7 +1276,7 @@ body.modal-overlay-active #modal_overlay {
   border-color: var(--primary-color-high);
 }
 .cbi-button-positive.important,
-.cbi-page-actions .cbi-button-save {
+.cbi-page-actions .cbi-button-save { /* effect save butt */
   --on-color: var(--on-success-color);
   background: linear-gradient(
     var(--success-color-medium),
@@ -1364,7 +1366,7 @@ body.modal-overlay-active #modal_overlay {
 }
 .cbi-dropdown > ul.dropdown > li,
 .cbi-dropdown:not(.btn):not(.cbi-button) > ul > li {
-  min-height: 20px;
+  min-height: 32px; /* fix option down hard to touch : hw offload & other down option */
   color: var(--text-color-high);
   padding: 0.25em;
 }
@@ -1402,6 +1404,7 @@ body.modal-overlay-active #modal_overlay {
   width: auto;
   transition: max-height 0.125s ease-in;
   overflow-y: auto;
+  max-height: 10em !important; /* fix vlan br new size */
 }
 .cbi-dropdown > ul > li[display],
 .cbi-dropdown[open] > ul.preview,
@@ -1626,9 +1629,10 @@ form.inline {
 }
 #syslog {
   width: 100%;
-  color: #827062;
+  color: #827062; /* fix too high contrast log, eyes safer */
   margin-bottom: 18px;
-  font-family: monospace;
+  font-family: 'Noto Sans Mono Condensed', monospace;
+  font-size: 13px !important; /* fix too small log */
 }
 .cbi-section-table .tr:hover .td,
 .cbi-section-table .tr:hover .th,
@@ -1646,7 +1650,7 @@ form.inline {
   line-height: 18px;
   font-weight: 700;
   vertical-align: middle;
-  border-top: 1px solid var(--border-color-medium);
+  border-top: 1px solid rgba(125, 125, 125, 0.15); /*table line first collum*/
   padding: 10px 10px 9px;
 }
 .left {
@@ -1676,7 +1680,7 @@ table table td,
 .table.cbi-section-table textarea,
 .table.cbi-section-table select,
 .table.cbi-section-table .cbi-select {
-  width: 100%;
+  width: 6em; /* fw down option : fix ugly on mobile*/
   min-width: auto;
 }
 .table.cbi-section-table .td.cbi-section-table-cell {
@@ -1715,6 +1719,7 @@ th[data-sort-direction="desc"]::after {
 .cbi-value-description {
   position: relative;
   margin: 0.25em 0 0 1.25em;
+  color: #535353; /* desc item */
 }
 .cbi-value-description:not(:empty)::before {
   --help-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20'><path d='M10 0A10 10 0 000 10a10 10 0 0010 10 10 10 0 0010-10A10 10 0 0010 0zm1 17H9v-2h2v2zm2.1-7.7l-.9.9c-.8.7-1.2 1.3-1.2 2.8H9v-.5c0-1.1.4-2.1 1.2-2.8l1.2-1.3c.4-.3.6-.8.6-1.4a2 2 0 00-2-2 2 2 0 00-2 2H6a4 4 0 014-4 4 4 0 014 4c0 .9-.4 1.7-.9 2.3z'/></svg>");
@@ -1808,13 +1813,6 @@ th[data-sort-direction="desc"]::after {
   max-width: 10em; /* better mobile look : effect> overview,nft */
 }
 
-/* Larger max-width for larger screens */
-@media (min-width: 760px) {
-  .ifacebadge {
-    max-width: 40em; 
-  }
-}
-
 .ifacebadge img {
   width: 16px;
   height: 16px;
@@ -1865,13 +1863,13 @@ th[data-sort-direction="desc"]::after {
 .ifacebadge.large > * {
   margin: 0 0.125em;
 }
-.zonebadge {
+.zonebadge { /* fw zone  */
   border-radius: 4px;
   display: inline-block;
-  white-space: nowrap;
+  /* white-space: nowrap; WHY openwrt use it : fix zone-forward single column */
   color: var(--text-color-high);
   text-shadow: 0 1px 1px hsla(var(--background-color-high-hsl), 0.75);
-  padding: 2px;
+  padding: 0.3em; /**/
 }
 .zonebadge > em,
 .zonebadge > strong {

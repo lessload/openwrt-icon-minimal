@@ -14,8 +14,6 @@ under licence https://pictogrammers.com/docs/general/license/ (Apache 2.0)
 * sample picture use `Noto Sans` font. not default font from OpenWRT.
 
 ----------------------
-### favicon-mod
-* For better favicon. optimize color for web browser dark theme.
 
 ### css-mod
 * for better layout and compatible with `noto sans` font

@@ -107,7 +107,6 @@
 }
 abbr[title],
 acronym[title] {
-  border-bottom: 1px dotted;
   font-weight: inherit;
   cursor: help;
 }
@@ -1474,7 +1473,7 @@ body.modal-overlay-active #modal_overlay {
   max-width: none;
   min-width: 100%;
   width: auto;
-  transition: max-height 0.125s ease-in;
+  transition: max-height 0.3s ease-in; 
   overflow-y: auto;
   max-height: 30em !important; 
 }
@@ -1788,28 +1787,35 @@ th[data-sort-direction="asc"]::after {
 th[data-sort-direction="desc"]::after {
   content: "\a0\25bc";
 }
+#cbi-json-password-pw2 .cbi-value-field .cbi-value-description { 
+    opacity: 1;
+}
 .cbi-value-description {
   position: relative;
-  margin: 0.25em 0 0 1.25em;
-  opacity: 0.1; 
-  transition: all 0.3s ease; 
-  max-height: 2.2em; 
+  margin: 0.25em 0 0 0.18em; 
+  opacity: 0.15; 
+  color: #888;
   overflow: hidden;
+  max-height: 2.2em;
+  clip-path: inset(0 0 calc(100% - 2.2em) 0);
+  transition: opacity 0.3s ease, clip-path 0.4s ease, max-height 0.5s ease; 
+  padding-left: 1.3em; 
 }
 .cbi-value-description:hover {
   opacity: 1; 
-  white-space: normal;
   overflow: visible;
-  text-shadow: 0 0 4px #000; 
-  color: #888;
-}
-.cbi-map-descr, .cbi-section-descr {
-  opacity: 0.7 !important; 
+  z-index: 10; 
+  max-width: fit-content;
+  max-height: 10em; 
+  clip-path: inset(0 0 0 0);
+  padding-left: 1.3em; 
 }
 .cbi-value-description:not(:empty)::before { 
+  opacity: 0.7; 
   --help-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20'><path d='m9.506 1.019c-0.475 0-0.950 0.180-1.339 0.560l-7.599 7.595c-0.750 0.741-0.750 1.937 0 2.677l7.599 7.595c0.741 0.750 1.938 0.750 2.679 0l7.599-7.595c0.750-0.741 0.750-1.937 0-2.677l-7.599-7.595c-0.389-0.380-0.864-0.560-1.339-0.560m0 4.699c2.565 0.104 3.676 2.687 2.166 4.614-0.399 0.475-1.035 0.788-1.358 1.196-0.332 0.408-0.332 0.883-0.332 1.358h-1.425c0-0.807 0-1.481 0.332-1.956 0.313-0.475 0.950-0.759 1.349-1.073 1.168-1.073 0.864-2.582-0.731-2.706-0.779 0-1.425 0.636-1.425 1.434h-1.425c0-1.585 1.282-2.867 2.850-2.867m-0.950 8.117h1.425v1.424h-1.425z'/></svg>");
   position: absolute;
-  left: -1.25em;
+  left: 0em; 
+  top: 0.2em; 
   content: "\a0";
   display: inline-block;
   width: 1em;
@@ -1820,6 +1826,9 @@ th[data-sort-direction="desc"]::after {
   mask-size: cover;
   -webkit-mask-image: var(--help-icon);
   -webkit-mask-size: cover;
+}
+.cbi-map-descr, .cbi-section-descr {
+  opacity: 0.7 !important; 
 }
 .cbi-section-error {
   border: 1px solid red;

@@ -117,8 +117,6 @@ table {
 }
 html {
   font-size: 100%;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
   height: 100%;
 }
 a:focus {
@@ -165,7 +163,6 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   cursor: pointer;
-  -webkit-appearance: button;
   word-break: break-all;
 }
 button[disabled],
@@ -175,7 +172,6 @@ input[type="submit"][disabled] {
   opacity: var(--disabled-opacity);
 }
 input[type="search"] {
-  -webkit-appearance: textfield;
   box-sizing: content-box;
 }
 input[type="search"]::-webkit-search-decoration {
@@ -199,9 +195,9 @@ textarea {
 body {
   background-color: var(--background-color-high);
   font-family: "Noto Sans", sans-serif;
-  font-size: 14px; /*menu + some text*/
+  font-size: 14px; 
   font-weight: 400;
-  line-height: 1.4em; /*menu*/
+  line-height: 1.4em; 
   color: var(--text-color-high);
   min-height: 100%;
   display: flex;
@@ -210,8 +206,8 @@ body {
   padding: 5px;
 }
 .container {
-  width: 94%; /* overview table */
-  max-width: 860px; /**/
+  width: 94%; 
+  max-width: 860px; 
   margin-left: auto;
   margin-right: auto;
   zoom: 1;
@@ -239,7 +235,7 @@ p,
   font-size: 13px;
   font-weight: 400;
   line-height: 18px;
-  margin-bottom: 9px;
+  margin: 0.5em 0 0.5em 0; 
 }
 p small {
   font-size: 11px;
@@ -281,7 +277,7 @@ h6 {
 }
 h4 {
   font-size: 16px;
-  margin-bottom: 1em;
+  margin-bottom: 1em; 
 }
 h4 small {
   font-size: 12px;
@@ -337,6 +333,10 @@ strong {
   font-style: inherit;
   font-weight: 700;
 }
+.nowrap strong {
+  padding-right: 0.2em; 
+  opacity: 0.5; 
+}
 em {
   font-style: italic;
   font-weight: inherit;
@@ -352,14 +352,45 @@ address {
 }
 code,
 pre {
-  font-family: Monaco, Andale Mono, Courier New, monospace;
+  font-family: 'Noto Sans Mono Condensed', monospace; 
   font-size: 12px;
   border-radius: 3px;
   padding: 0 3px 2px;
 }
+#view {
+  padding: 0 0 2.4em 0; 
+}
+#maincontent .cbi-map {
+  padding: 0 0 2.4em 0; 
+}
+#view textarea, 
+#widget\.command-output, 
+#widget\.cbid\.json\.config\.editlist, 
+#command-rc-output, 
+#logfile { 
+  color: #958170; 
+  font-family: 'Noto Sans Mono Condensed', monospace !important;
+}
+#syslog { 
+  width: 100%;
+  color: #827062; 
+  margin-bottom: 18px;
+  font-family: 'Noto Sans Mono Condensed', monospace;
+  font-size: 13px !important; 
+}
+.commandbox {
+  margin-top: 2em !important; 
+}
+.commandbox p {
+  color: #444; 
+  margin-top: auto; 
+}
+.commandbox code {
+  color: #958170; 
+}
 code {
   background-color: var(--border-color-low);
-  color: var(--text-color-high);
+  color: var(--text-color-high); 
   padding: 1px 3px;
 }
 pre {
@@ -395,7 +426,7 @@ fieldset legend {
   padding-top: 20px;
 }
 label {
-  padding: 0 0.5em; /* padding left right : switch vlan*/
+  padding: 0 0.5em; 
 }
 input,
 button,
@@ -421,12 +452,11 @@ select {
   flex: 0 0 180px;
   text-align: right;
   color: var(--text-color-high);
-  max-width: 12em; /* login + firmware table */
+  max-width: 12em; 
 }
 label > input[type="checkbox"],
 label > input[type="radio"] {
   vertical-align: text-top;
-  margin: 0;
 }
 input,
 textarea,
@@ -448,14 +478,14 @@ select,
 .cbi-select,
 .cbi-dropdown:not(.btn):not(.cbi-button) {
   height: 30px;
-  padding-left: 0.6em; /* add space in option list*/
+  padding-left: 0.6em; 
 }
 .cbi-dropdown:not(.btn):not(.cbi-button),
 .cbi-dynlist {
   min-width: 210px;
   max-width: 400px;
   width: auto;
-  min-height: 2.6em; /* drop down option menu */
+  min-height: 2.6em; 
 }
 .cbi-dynlist {
   height: auto;
@@ -574,6 +604,9 @@ input[type="submit"] {
 select[multiple] {
   height: inherit;
   background-color: #fff;
+}
+input[type="checkbox"] { 
+  margin: 0.15em 0.15em 0;
 }
 input[type="checkbox"],
 input[type="radio"] {
@@ -751,9 +784,27 @@ textarea[readonly] {
 .table .td {
   display: table-cell;
   vertical-align: middle;
-  line-height: 1.4em; /* add line space at wifi detail */
+  line-height: 1.4em; 
   text-align: left;
   padding: 10px 10px 9px;
+}
+.cbi-section.fade-in table tr td:first-child {
+  opacity: 0.6;  
+}
+#https-dns-proxy_status_table td:first-child, 
+#status_leases td:first-child,
+#wifi_assoclist_table td:first-child {
+  opacity: 1 !important;
+}
+#wifi_assoclist_table td:first-child {
+  width: 20%; 
+}
+#cbi-wireless-radio0.tr.cbi-section-table-row,
+#cbi-wireless-radio1.tr.cbi-section-table-row,
+#cbi-wireless-radio2.tr.cbi-section-table-row { 
+  background-image: linear-gradient(to bottom, #62626217, transparent);
+  background-size: 100% 2em;
+  background-repeat: no-repeat;
 }
 .table .tr:first-child .th {
   padding-top: 9px;
@@ -762,7 +813,7 @@ textarea[readonly] {
 }
 .table .td,
 .table .th {
-  border-top: 1px solid rgba(125, 125, 125, 0.15); /* table line too light */
+  border-top: 1px solid rgba(125, 125, 125, 0.15); 
 }
 .tr.placeholder {
   height: calc(3em + 20px);
@@ -784,13 +835,13 @@ textarea[readonly] {
   border-width: 0 0 2px;
 }
 header {
-  /* width: 94%; /* nav bar: effect gradiant */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.46); 
   position: sticky;
   top: 0;
   z-index: 800;
   overflow: visible;
   color: #bfbfbf;
-  display: table; /* make nav stay oneline*/
+  display: table; 
   background: linear-gradient(#333, #222);
   box-shadow: 0 1px 3px hsla(var(--border-color-low-hsl), 0.25),
     inset 0 -1px 0 hsla(var(--border-color-low-hsl), 0.01);
@@ -808,20 +859,22 @@ header ul .active > a {
   text-decoration: none;
 }
 header .brand {
+  opacity: 0.8; 
+  background: url('/luci-static/bootstrap/logo.svg') no-repeat center; 
+  background-size: contain; 
+  text-indent: -9999px; 
+  margin: 0 0.4em 0 2.2em;  
   float: left;
   display: block;
-  margin-left: 1.2em; /* offset branding */
   color: #fff;
   font-size: 20px;
   font-weight: 200;
   line-height: 1;
-  padding: 8px 20px 12px;
+  padding: 16px 12px 0 12px; 
 }
 header .pull-right {
-  margin-top: 0.6em; /* refresh button */
-  margin-right: 5em;
-  /*align-self: center;*/
-  max-width: 3em; /* to make all in single line on mobile*/
+  margin: 0.6em 6em 0.6em auto;  
+  max-width: 3em; 
 }
 header p {
   line-height: 40px;
@@ -843,7 +896,7 @@ header p {
   float: none;
   line-height: 19px;
   text-decoration: none;
-  padding: 0.6em 0.6em 0.9em; /* nav bar */
+  padding: 0.6em 0.6em 0.9em; 
 }
 .nav a:hover {
   color: #fff;
@@ -861,7 +914,7 @@ header p {
 .nav .dropdown-menu li a {
   color: #999;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
-  padding: 0.6em 15px; /* menu in nav bar */
+  padding: 0.6em 15px; 
 }
 .nav .dropdown-menu li a:hover {
   background-color: #191919;
@@ -913,7 +966,7 @@ a.menu:after {
   display: block;
   clear: both;
   font-weight: 400;
-  line-height: 16px; /* nav drop down */
+  line-height: 16px; 
   color: gray;
   text-shadow: 0 1px 0 #fff;
   padding: 4px 15px;
@@ -1000,7 +1053,7 @@ a.menu:after {
 }
 .tabs > li:not(.active),
 .cbi-tabmenu > .cbi-tab-disabled {
-  color: var(--tab-inactive-text-color);
+  color:#8d8d8d !important; 
   background: linear-gradient(
     var(--tab-inactive-background-color) 90%,
     var(--tab-inactive-border-color) 100%
@@ -1072,17 +1125,14 @@ a.menu:after {
   padding: 0 5px;
 }
 footer {
-  padding-top: 17px;
-  margin-top: auto;
-  border-top: 1px solid var(--border-color-low);
+  padding: 1.4em 1em 0 0; 
+  border-top: 1px solid #2f2f2f; 
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  justify-content: space-between;
+  justify-content: center; 
   font-size: 12px;
-  color: var(--text-color-medium);
-  padding-left: calc((100% - 940px) / 2);
-  padding-right: calc((100% - 940px) / 2);
+  color: #757575; 
 }
 footer a {
   color: var(--primary-color-low);
@@ -1097,28 +1147,50 @@ footer ul.breadcrumb {
   position: fixed;
   top: 0;
   bottom: 0;
-  background: rgba(18, 18, 18, 0.7); /* bg login color : fix oled high contrast*/
+  background: #171717; 
   z-index: 900;
   overflow: auto;
   transition: opacity 0.125s ease-in;
   opacity: 0;
   visibility: hidden;
 }
+#modal_overlay .modal {
+  padding: 1.2em 1.6em 1.2em; 
+}
+.modal.login{ 
+  max-width: 31em;
+  padding: 2em 0 1.4em 0; 
+}
+.modal.login h4 { 
+ text-align: center;
+ padding: 0 0 1em 0;
+}
+.modal.login hr { 
+  width: 90%;
+  margin: 0 auto 1.5em auto;  
+ }
+.modal.login .cbi-value-title { 
+  max-width: 10em;
+}
+#luci_username,
+#luci_password {
+    width: 80%; 
+}
 .modal {
-  /* width: 90%; */
+  width: 90%;
   min-height: 32px;
-  max-width: 46em; /* login + popup firmware */
+  max-width: 46em; 
   border-radius: 3px;
   background: var(--background-color-high);
   border: 1px solid var(--border-color-low);
   box-shadow: 0 0 3px var(--background-color-low);
   min-width: 270px;
   margin: 5em auto;
-  padding: 1em 1em 1.2em; /* login, firmware popup */
+  padding: 1em 1em 1.2em; 
 }
-.modal > * {
+.modal > * { 
   line-height: normal;
-  margin-bottom: 0.5em; /* under Auth login : effect flash fw option*/
+  margin-bottom: 0.5em;
   max-width: 100%;
 }
 .modal > pre,
@@ -1276,7 +1348,7 @@ body.modal-overlay-active #modal_overlay {
   border-color: var(--primary-color-high);
 }
 .cbi-button-positive.important,
-.cbi-page-actions .cbi-button-save { /* effect save butt */
+.cbi-page-actions .cbi-button-save { 
   --on-color: var(--on-success-color);
   background: linear-gradient(
     var(--success-color-medium),
@@ -1366,9 +1438,9 @@ body.modal-overlay-active #modal_overlay {
 }
 .cbi-dropdown > ul.dropdown > li,
 .cbi-dropdown:not(.btn):not(.cbi-button) > ul > li {
-  min-height: 32px; /* fix option down hard to touch : hw offload & other down option */
+  min-height: 32px; 
   color: var(--text-color-high);
-  padding: 0.25em;
+  padding: 0.5em; 
 }
 .cbi-dropdown > ul > li[display]:not([display="0"]) {
   border-left: 1px solid var(--border-color-high);
@@ -1404,7 +1476,10 @@ body.modal-overlay-active #modal_overlay {
   width: auto;
   transition: max-height 0.125s ease-in;
   overflow-y: auto;
-  max-height: 10em !important; /* fix vlan br new size */
+  max-height: 30em !important; 
+}
+#cbi-network-bridge-vlan {
+  padding-bottom: 5em; 
 }
 .cbi-dropdown > ul > li[display],
 .cbi-dropdown[open] > ul.preview,
@@ -1442,13 +1517,16 @@ body.modal-overlay-active #modal_overlay {
   opacity: 0.7;
 }
 .cbi-title-ref {
-  color: #37c;
+  color: #4da1c0; 
 }
 .cbi-title-ref::after {
   content: "➙";
 }
 .cbi-tooltip-container {
   cursor: help;
+}
+.ifacebox-head .cbi-tooltip-container {
+  opacity: 1; 
 }
 .cbi-tooltip {
   position: absolute;
@@ -1570,6 +1648,7 @@ input[type="submit"].btn::-moz-focus-inner {
   border-color: var(--border-color-high) var(--border-color-high)
     var(--border-color-low);
   padding: 0.5em 0.5em 0.25em;
+  opacity: 0.7; 
 }
 .alert-message .close {
   margin-top: 1px;
@@ -1627,13 +1706,6 @@ form.inline {
   display: inline;
   margin-bottom: 0;
 }
-#syslog {
-  width: 100%;
-  color: #827062; /* fix too high contrast log, eyes safer */
-  margin-bottom: 18px;
-  font-family: 'Noto Sans Mono Condensed', monospace;
-  font-size: 13px !important; /* fix too small log */
-}
 .cbi-section-table .tr:hover .td,
 .cbi-section-table .tr:hover .th,
 .cbi-section-table .tr:hover::before {
@@ -1650,7 +1722,7 @@ form.inline {
   line-height: 18px;
   font-weight: 700;
   vertical-align: middle;
-  border-top: 1px solid rgba(125, 125, 125, 0.15); /*table line first collum*/
+  border-top: 1px solid #7D7D7D26; 
   padding: 10px 10px 9px;
 }
 .left {
@@ -1680,7 +1752,7 @@ table table td,
 .table.cbi-section-table textarea,
 .table.cbi-section-table select,
 .table.cbi-section-table .cbi-select {
-  width: 6em; /* fw down option : fix ugly on mobile*/
+  width: 6em; 
   min-width: auto;
 }
 .table.cbi-section-table .td.cbi-section-table-cell {
@@ -1719,10 +1791,23 @@ th[data-sort-direction="desc"]::after {
 .cbi-value-description {
   position: relative;
   margin: 0.25em 0 0 1.25em;
-  color: #535353; /* desc item */
+  opacity: 0.1; 
+  transition: all 0.3s ease; 
+  max-height: 2.2em; 
+  overflow: hidden;
 }
-.cbi-value-description:not(:empty)::before {
-  --help-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20'><path d='M10 0A10 10 0 000 10a10 10 0 0010 10 10 10 0 0010-10A10 10 0 0010 0zm1 17H9v-2h2v2zm2.1-7.7l-.9.9c-.8.7-1.2 1.3-1.2 2.8H9v-.5c0-1.1.4-2.1 1.2-2.8l1.2-1.3c.4-.3.6-.8.6-1.4a2 2 0 00-2-2 2 2 0 00-2 2H6a4 4 0 014-4 4 4 0 014 4c0 .9-.4 1.7-.9 2.3z'/></svg>");
+.cbi-value-description:hover {
+  opacity: 1; 
+  white-space: normal;
+  overflow: visible;
+  text-shadow: 0 0 4px #000; 
+  color: #888;
+}
+.cbi-map-descr, .cbi-section-descr {
+  opacity: 0.7 !important; 
+}
+.cbi-value-description:not(:empty)::before { 
+  --help-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20'><path d='m9.506 1.019c-0.475 0-0.950 0.180-1.339 0.560l-7.599 7.595c-0.750 0.741-0.750 1.937 0 2.677l7.599 7.595c0.741 0.750 1.938 0.750 2.679 0l7.599-7.595c0.750-0.741 0.750-1.937 0-2.677l-7.599-7.595c-0.389-0.380-0.864-0.560-1.339-0.560m0 4.699c2.565 0.104 3.676 2.687 2.166 4.614-0.399 0.475-1.035 0.788-1.358 1.196-0.332 0.408-0.332 0.883-0.332 1.358h-1.425c0-0.807 0-1.481 0.332-1.956 0.313-0.475 0.950-0.759 1.349-1.073 1.168-1.073 0.864-2.582-0.731-2.706-0.779 0-1.425 0.636-1.425 1.434h-1.425c0-1.585 1.282-2.867 2.850-2.867m-0.950 8.117h1.425v1.424h-1.425z'/></svg>");
   position: absolute;
   left: -1.25em;
   content: "\a0";
@@ -1762,16 +1847,17 @@ th[data-sort-direction="desc"]::after {
   box-shadow: inset 0 1px 0 hsla(var(--text-color-low-hsl), 0.05);
   display: inline-flex;
   flex-direction: column;
-  line-height: 1.6em;
+  line-height: 1.5em; 
   min-width: 100px;
   margin: 0 10px;
 }
 .ifacebox .ifacebox-head {
   border-bottom: 1px solid var(--border-color-high);
   border-radius: 3px 3px 0 0;
-  background: #eee;
+  background: #333; 
   color: var(--text-color-high);
   padding: 2px;
+  opacity: 0.8; 
 }
 .ifacebox .ifacebox-head[style] {
   text-shadow: 0 1px 1px hsla(var(--background-color-high-hsl), 0.75);
@@ -1808,11 +1894,10 @@ th[data-sort-direction="desc"]::after {
   border-radius: 4px;
   box-shadow: inset 0 1px 0 hsla(var(--background-color-high-hsl), 0.05);
   cursor: default;
-  line-height: 1.3em;
-  padding: 0.4em; /* wifi iface box */
-  max-width: 10em; /* better mobile look : effect> overview,nft */
+  line-height: 1.3em; 
+  padding: 0.4em; 
+  max-width: 40em; 
 }
-
 .ifacebadge img {
   width: 16px;
   height: 16px;
@@ -1852,9 +1937,9 @@ th[data-sort-direction="desc"]::after {
 .network-status-table .ifacebox-body .ifacebadge {
   display: flex;
   flex: 1;
-  max-width: 28em; /* wifi info large fix */
+  max-width: 28em; 
   margin: 0.125em;
-  padding: 0.5em;
+  padding: 0.5em; 
 }
 .ifacebadge.large {
   display: inline-flex;
@@ -1863,13 +1948,12 @@ th[data-sort-direction="desc"]::after {
 .ifacebadge.large > * {
   margin: 0 0.125em;
 }
-.zonebadge { /* fw zone  */
+.zonebadge { 
   border-radius: 4px;
   display: inline-block;
-  /* white-space: nowrap; WHY openwrt use it : fix zone-forward single column */
   color: var(--text-color-high);
   text-shadow: 0 1px 1px hsla(var(--background-color-high-hsl), 0.75);
-  padding: 0.3em; /**/
+  padding: 0.3em; 
 }
 .zonebadge > em,
 .zonebadge > strong {
@@ -1910,9 +1994,12 @@ div.cbi-value var.cbi-tooltip-container,
 #modal_overlay > .modal.cbi-modal {
   max-width: 900px;
 }
+#modal_overlay > .modal.uci-dialog {
+  padding: 1.4em; 
+}
 #modal_overlay > .modal.login > button.important {
   font-size: 120% !important;
-  margin: 0.5em auto; /* fix ugly button   */
+  margin: 0.5em auto; 
   width: 5em;
   display: block; 
 }
@@ -1941,10 +2028,10 @@ div.cbi-value var.cbi-tooltip-container,
   border-color: rgba(var(--error-color-high-rgb), 0.6);
 }
 .uci-dialog var > ins {
-  background-color: rgba(var(--success-color-high-rgb), 0.3);
+  background-color: rgba(var(--success-color-high-rgb), 0.2); 
 }
 .uci-dialog var > del {
-  background-color: rgba(var(--error-color-high-rgb), 0.3);
+  background-color: rgba(var(--error-color-high-rgb), 0.2); 
 }
 .uci-dialog del,
 .uci-dialog ins,
@@ -1985,13 +2072,13 @@ div.cbi-value var.cbi-tooltip-container,
 }
 .spinning {
   position: relative;
-  padding-left: 32px !important;
+  padding-left: 32px !important; 
 }
 .spinning::before {
   --spinner-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' stroke='%23000' stroke-width='3' fill='none'><circle cx='10' cy='10' r='8' stroke-opacity='.5'/><path d='M10 2c4 0 8 4 8 8'><animateTransform attributeName='transform' type='rotate' dur='1s' from='0 10 10' to='360 10 10' repeatCount='indefinite'/></path></svg>");
   position: absolute;
   top: calc(50% - 10px);
-  left: 6px;
+  left: 6px; 
   width: 20px;
   height: 20px;
   content: " ";

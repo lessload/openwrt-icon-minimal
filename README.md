@@ -13,6 +13,8 @@ under licence https://pictogrammers.com/docs/general/license/ (Apache 2.0)
 * tested on Bootstrap default in OpenWRT 24.x .
 * sample picture use `Noto Sans` font. not default font from OpenWRT.
 
+<img src="sample-2.png" width="800">
+
 ----------------------
 
 ### css-mod
